@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Ticket {
@@ -6,21 +6,21 @@ export class Ticket {
     this.ticketInformation = 'ticketInformation';
     this.validationCode = 'validationCode';
     this.ticketStatus = 'ticketStatus';
-    this.eventReference = 'eventReference';
+    this.eventReference = 0;
   }
 
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ length: 255, name: 'ticket_information' })
   ticketInformation: string;
 
-  @Column()
+  @Column({ length: 25, name: 'validation_code' })
   validationCode: string;
 
-  @Column()
+  @Column({ length: 10, name: 'ticket_status' })
   ticketStatus: string;
 
-  @Column()
-  eventReference: string;
+  @Column({ name: 'event_reference' })
+  eventReference: number;
 }

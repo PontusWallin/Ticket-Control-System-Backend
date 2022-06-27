@@ -17,7 +17,7 @@ export class TicketBuilder {
     return this;
   }
 
-  eventReference(eventReference: string): TicketBuilder {
+  eventReference(eventReference: number): TicketBuilder {
     this._ticket.eventReference = eventReference;
     return this;
   }

@@ -2,10 +2,12 @@ version: "3.2"
 services:
   database:
     image: "postgres:latest"
-    container_name: "person_database"
+    container_name: "ticket_controller_database"
     ports:
       - 5432:5432
     environment:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "password"
-      POSTGRES_DB: "person_db"
+      POSTGRES_DB: "ticket_controller_db"
+    volumes:
+      - ./docker_postgres_init.sql:/docker-entrypoint-initdb.d/docker_postgres_init.sql

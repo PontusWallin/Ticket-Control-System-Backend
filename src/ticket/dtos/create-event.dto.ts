@@ -1,15 +1,16 @@
-import { IsString } from "class-validator";
+import { IsDate, IsString } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
 
-export class CreateTicketDto {
+export class CreateEventDto {
+  @ApiProperty()
   @IsString()
-  ticketInformation: string;
+  eventInfo: string;
 
+  @ApiProperty()
   @IsString()
-  validationCode: string;
+  eventLocation: string;
 
-  @IsString()
-  ticketStatus: string;
-
-  @IsString()
-  eventReference: string;
+  @ApiProperty()
+  @IsDate()
+  timeOfEvent: Date;
 }
