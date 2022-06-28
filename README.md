@@ -4,7 +4,7 @@ A sample ticket control application.
 
 ## Installation
 
-First, set up the database (postgres container) by running the docker compose file 'postgres-docker.yml'.
+First, set up the database (docker container containing a postgress database) by running the docker compose file 'postgres-docker.yml'.
 
 Next, run this command in the console:
 
